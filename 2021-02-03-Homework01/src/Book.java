@@ -12,6 +12,7 @@ public class Book {
     String genre;
     double rating;
     double price;
+    int edit;
 
     public void displayInfo() {
         System.out.println("Название книги: " + title);
@@ -23,6 +24,7 @@ public class Book {
         System.out.println("Жанр: " + genre);
         System.out.println("Рейтинг: " + rating);
         System.out.println("Цена: " + price + " руб.");
+        System.out.println("Тираж:" + edit);
         System.out.println("++++++++++++++++++++");
 
     }
@@ -40,6 +42,7 @@ class TestBooks {
         book1.genre = "учебник";
         book1.rating = 8.99;
         book1.price = 540.50;
+        book1.edit = 4000;
         book1.displayInfo();
 
         Book book2 = new Book();
@@ -52,18 +55,21 @@ class TestBooks {
         book2.genre = "роман";
         book2.rating = 10.00;
         book2.price = 1540.50;
+        book2.edit = 200000;
         book2.displayInfo();
 
         Book book3 = new Book();
-        book2.title = "Книга о вкусной и полезной пище";
-        book2.ISBN = "978-5-389-06256-4";
-        book2.author = "Иванов И.И.";
-        book2.year = 2020;
-        book2.pages = 150;
-        book2.cover = true;
-        book2.genre = "кулинарная книга";
-        book2.rating = 4.60;
-        book2.price = 40.50;
+        book3.title = "Книга о вкусной и полезной пище";
+        book3.ISBN = "978-5-389-06256-4";
+        book3.author = "Иванов И.И.";
+        book3.year = 2020;
+        book3.pages = 150;
+        book3.cover = true;
+        book3.genre = "кулинарная книга";
+        book3.rating = 4.60;
+        book3.price = 40.50;
+        book3.edit = 300;
+
         book2.displayInfo();
 
         Book book4 = new Book();
@@ -76,6 +82,7 @@ class TestBooks {
         book4.genre = "сказки";
         book4.rating = 9.60;
         book4.price = 650.7;
+        book4.edit = 40000;
         book4.displayInfo();
 
         Book book5 = new Book();
@@ -88,9 +95,8 @@ class TestBooks {
         book5.genre = "приключения";
         book5.rating = 9.60;
         book5.price = 5000.9;
+        book5.edit = 4000;
         book5.displayInfo();
-
-
 
 
     }
