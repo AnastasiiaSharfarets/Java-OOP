@@ -1,7 +1,5 @@
 package Books02;
 
-import Swans02.Swan;
-
 public class Main {
     public static void main(String[] args) {
         Book myBook1 = new Book("Война и мир", "12123-2323-00", 50000);

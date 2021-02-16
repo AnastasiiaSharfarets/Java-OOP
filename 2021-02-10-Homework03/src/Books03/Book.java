@@ -1,3 +1,5 @@
+package Books03;
+
 public class Book {
    /* SwanTest and BookTest:
     create array
@@ -6,4 +8,5 @@ public class Book {
     change element
     printArray
 */
+
 }
