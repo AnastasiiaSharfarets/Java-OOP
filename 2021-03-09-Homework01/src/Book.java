@@ -5,52 +5,82 @@ public class Book {
     private int countPages;
     private double pricePerPage;
 
+    public Book() {
+        author = "No author";
+        title = "No title";
+    }
+
     public Book(long isbn, String author, String title, int countPages, double pricePerPage) {
-        this.isbn = isbn;
-        this.author = author;
-        this.title = title;
-        this.countPages = countPages;
-        this.pricePerPage = pricePerPage;
+        setIsbn(isbn);
+
+        if (author != null && !author.trim().isEmpty())
+            this.author = author;
+        else
+            this.author = "No author";
+
+        if (title != null && !title.trim().isEmpty())
+            this.title = title;
+        else
+            this.title = "No title";
+
+        setCountPages(countPages);
+
+        setPricePerPage(pricePerPage);
     }
 
     public long getIsbn() {
         return isbn;
     }
 
+    public void setIsbn(long isbn) {
+        if (isbn > 0 && isbn < 10_000_000)
+            this.isbn = isbn;
+        else
+            System.out.println("Wrong isbn");
+    }
+
     public String getAuthor() {
         return author;
+    }
+
+    public void setAuthor(String author) {
+        if (author != null && author.trim().isEmpty())
+            this.author = author;
+        else
+            System.out.println("Wrong author");
     }
 
     public String getTitle() {
         return title;
     }
 
+    public void setTitle(String title) {
+        if (title != null && title.trim().isEmpty())
+            this.title = title;
+        else
+            System.out.println("Wrong title");
+    }
+
     public int getCountPages() {
         return countPages;
+    }
+
+    public void setCountPages(int countPages) {
+        if (countPages >= 0 && countPages <= 10_000)
+            this.countPages = countPages;
+        else
+            System.out.println("Wrong countPages");
     }
 
     public double getPricePerPage() {
         return pricePerPage;
     }
 
-    public void setIsbn(long isbn) {
-        this.isbn = isbn;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setCountPages(int countPages) {
-        this.countPages = countPages;
-    }
-
     public void setPricePerPage(double pricePerPage) {
-        this.pricePerPage = pricePerPage;
+        if (pricePerPage >= 0 && pricePerPage <= 10000)
+            this.pricePerPage = pricePerPage;
+        else
+            System.out.println("Wrong pricePerPage");
     }
 
     @Override

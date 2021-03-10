@@ -1,3 +1,5 @@
+
+
 // 100 best cocktails of the world
 public class Almanach {
     private Cocktail[] cocktails;
@@ -9,6 +11,7 @@ public class Almanach {
     }
 
     //CRUD - create,read, update, delete
+
     public boolean addCocktail(Cocktail cocktail) {
         if (size < cocktails.length) {
             cocktails[size] = cocktail;
@@ -31,12 +34,25 @@ public class Almanach {
 
     public boolean update(Cocktail oldDrink, Cocktail newDrink) {
         for (int i = 0; i < size; i++) {
-            //мы пл тайлам проверяем соответсвие коктейлей
+            //мы по тайтлам проверяем соответсвие коктейлей
             if (cocktails[i].getTitle().equals(oldDrink.getTitle())) {
                 cocktails[i] = newDrink;
                 return true;
             }
         }
         return false;
+    }
+
+    public String updateForPeople(Cocktail oldDrink, Cocktail newDrink){
+        if(update(oldDrink,newDrink)){
+            return  "Апдейт прошёл успешно";
+        }
+        return "опять ничего не получилось";
+    }
+
+    @Override
+    public String toString() {
+        // дописать тустринг для альманаха используя Коктейль.геттайтл или Коктейль тустринг.
+        return "В нашем альманахе уже " + size + " страниц. \n";
     }
 }

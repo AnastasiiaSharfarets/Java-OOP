@@ -39,7 +39,6 @@ public class StartApplication {
         techUni.addPerson(ivanov);
         techUni.addPerson(petrov);
         techUni.addPerson(sidorov);
-
         techUni.sortByAge();
         techUni.printPersons();
 

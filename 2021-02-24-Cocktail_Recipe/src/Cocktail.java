@@ -1,6 +1,7 @@
 import java.util.Arrays;
 
 public class Cocktail {
+    // immutable - неизменяемый
     private String title;
     private Ingredient[] ingredients;
     private int liquid; // в мл
@@ -11,6 +12,10 @@ public class Cocktail {
         this.ingredients = ingredients;
         setLiquid();
         setPerCent();
+    }
+
+    public int getLiquid() {
+        return liquid;
     }
 
     public String getTitle() {
@@ -25,14 +30,6 @@ public class Cocktail {
             result += ingredients[i].getPerCent() * ingredients[i].getLiquid();
         }
         perCent = result / getLiquid();
-    }
-
-    public int getLiquid() {
-        return liquid;
-    }
-
-    public void setPerCent(int perCent) {
-        this.perCent = perCent;
     }
 
     private void setLiquid() {

@@ -22,4 +22,11 @@ public class Fraction {
         return denominator;
     }
 
+    @Override
+    public String toString() {
+        return "Fraction{" +
+                "numerator=" + numerator +
+                ", denominator=" + denominator +
+                '}';
+    }
 }
