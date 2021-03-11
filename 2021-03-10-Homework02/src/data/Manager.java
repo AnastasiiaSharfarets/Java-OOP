@@ -13,10 +13,7 @@ public class Manager extends Employee {
 
     public Manager(String name, long id, int age, String company, double baseSalary,int grade) {
         super(name, id, age, company, baseSalary);
-        if (grade >= 1 && grade <= 4)
-            this.grade = grade;
-        else
-            System.out.println("Wrong grade");
+        setGrade(grade);
     }
 
     public int getGrade() {
@@ -24,7 +21,10 @@ public class Manager extends Employee {
     }
 
     public void setGrade(int grade) {
-        this.grade = grade;
+        if (grade >= 1 && grade <= 4)
+            this.grade = grade;
+        else
+            System.out.println("Wrong grade");
     }
 
     @Override

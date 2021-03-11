@@ -1,4 +1,5 @@
 package data;
+
 import data.Person;
 
 public class Employee extends Person {
@@ -10,8 +11,8 @@ public class Employee extends Person {
 
     public Employee(String name, long id, int age, String company, double baseSalary) {
         super(name, id, age);
-        this.company = company;
-        this.baseSalary = baseSalary;
+        setCompany(company);
+        setBaseSalary(baseSalary);
     }
 
     public String getCompany() {
@@ -19,7 +20,10 @@ public class Employee extends Person {
     }
 
     public void setCompany(String company) {
-        this.company = company;
+        if (company != null && !company.trim().isEmpty())
+            this.company = company;
+        else
+            System.out.println("No company");
     }
 
     public double getBaseSalary() {
@@ -27,14 +31,17 @@ public class Employee extends Person {
     }
 
     public void setBaseSalary(double baseSalary) {
+        if (baseSalary>=0 && baseSalary<10_000.00)
         this.baseSalary = baseSalary;
+        else
+            System.out.println("Wrong baseSalary");
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "company='" + company + '\'' +
-                ", baseSalary=" + baseSalary +
+                ", baseSalary=" + baseSalary + " euro " +
                 ", name='" + name + '\'' +
                 ", id=" + id +
                 ", age=" + age +

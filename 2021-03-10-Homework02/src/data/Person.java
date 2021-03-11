@@ -10,11 +10,7 @@ public class Person {
     }
 
     public Person(String name, long id, int age) {
-        if (name != null && !name.trim().isEmpty())
-            this.name = name;
-        else
-            this.name = "No name";
-
+        setName(name);
         setId(id);
         setAge(age);
     }
@@ -24,7 +20,10 @@ public class Person {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty())
+            this.name = name;
+        else
+            this.name = "No name";
     }
 
     public long getId() {

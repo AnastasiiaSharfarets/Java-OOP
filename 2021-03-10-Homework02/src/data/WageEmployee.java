@@ -12,8 +12,8 @@ public class WageEmployee extends Employee {
 
     public WageEmployee(String name, long id, int age, String company, double baseSalary, int hours, double wage) {
         super(name, id, age, company, baseSalary);
-        this.hours = hours;
-        this.wage = wage;
+        setHours(hours);
+        setWage(wage);
     }
 
 
@@ -22,7 +22,10 @@ public class WageEmployee extends Employee {
     }
 
     public void setHours(int hours) {
-        this.hours = hours;
+        if (hours >= 0 && hours <= 1000)
+            this.hours = hours;
+        else
+            System.out.println("Wrong hours");
     }
 
     public double getWage() {
@@ -30,7 +33,10 @@ public class WageEmployee extends Employee {
     }
 
     public void setWage(double wage) {
-        this.wage = wage;
+        if (wage >= 0 && wage <= 200)
+            this.wage = wage;
+        else
+            System.out.println("Wrong wage");
     }
 
     @Override
