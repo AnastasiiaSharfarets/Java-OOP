@@ -25,7 +25,8 @@ public class EmployeesAppl {
 
     public static void printEmployee(Employee[] emps) {
         for (Employee e : emps) {
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
+
 }
