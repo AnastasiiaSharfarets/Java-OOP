@@ -28,7 +28,7 @@ public class EmployeesAppl {
         printEmpsWithSalaryMoreThan(emps, 1000);
         System.out.println("==================");
         System.out.println("Tolal sales: " + getCompanyRevenue(emps));
-
+        System.out.printf("Tolal sales: %.2f", getCompanyRevenue(emps));
     }
     //Напишите метод double getСompanyRevenue (emps) принимающий массив сотрудников и
     //возвращающий доход компании(сумма продаж всех менеджеров по продажам)

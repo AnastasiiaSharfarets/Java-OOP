@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Objects;
+
 public abstract class Person {
     String name;
     long id;
@@ -23,7 +25,7 @@ public abstract class Person {
         if (name != null && !name.trim().isEmpty())
             this.name = name;
         else
-            this.name = "No name";
+            System.out.println("Wrong name");
     }
 
     public long getId() {
@@ -55,6 +57,14 @@ public abstract class Person {
                 ", id=" + id +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+        Person person = (Person) o;
+        return getId() == person.getId();
     }
 
 }

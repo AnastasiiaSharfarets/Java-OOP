@@ -15,6 +15,7 @@ public class WageEmployee extends Employee {
     }
 
 
+
     public int getHours() {
         return hours;
     }
@@ -52,6 +53,7 @@ public class WageEmployee extends Employee {
 
     @Override
     public double calcSalary() {
-        return hours * wage;
+        double salary = hours * wage;
+        return  salary < baseSalary ? baseSalary : salary;
     }
 }

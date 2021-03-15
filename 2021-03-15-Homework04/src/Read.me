@@ -1,0 +1,24 @@
+1. Create an abstract class MassMedia with a field name. The classes will inherit from it:
+Newspaper with fields issueNumber, numberOfPages,
+-
+Journal with fields issueNumber, numberOfPages, boolean glossy,
+-
+NewsPortal with String url field,
+-
+WebSite
+with fields String url, author.
+2. Create an interface IPrintable with the method void print (), the purpose of which is to print to the
+console information about the objects that implements this interface.
+3. Implement this interface in the Newspaper and
+Journal classes.
+
+4. Create a MassMediaAppl class with main(). In this class, create 10 objects of different classes, and put
+them all in an array.
+
+A) Pass the array to the private static void displayPrintable (MassMedia[] ar) method, which should
+display information about the objects that implement the interface using the print() method.
+
+B) Pass the array to the private static IPrintable[] getPrintableElements(MassMedia[] ar) method,
+which should return an array of objects that implement the interface IPrintable.
+(Create and fill array IPrintable[] arr).
+Good luck.
