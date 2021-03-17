@@ -38,5 +38,36 @@ public class StringPracticeHwTest {
         assertEquals("ялО", StringPracticeHw.reverseString("Оля"));
         assertNotEquals("яло", StringPracticeHw.reverseString("Оля"));
     }
+    @Test
+    public void testGetStringReverse() {
+        assertEquals("amaM", StringPracticeHw.reverseString("Mama"));
+        assertEquals("amam", StringPracticeHw.reverseString("mama"));
+        assertEquals("	amaM", StringPracticeHw.reverseString("Mama	"));
+        //===========================Negative==========================
+        assertNull(StringPracticeHw.reverseString(""));
+        assertNull(StringPracticeHw.reverseString("			"));
+        assertNull(StringPracticeHw.reverseString(null));
+    }
+
+    @Test
+    public void testGetCountWords() {
+        String input = "Two beer or not two beer Sheiks Beer";
+        String word = "beer";
+        assertEquals(2,(int)StringPracticeHw.getCountWords(input, word));
+        assertEquals(1, (int)StringPracticeHw.getCountWords(input, "Beer"));
+        assertEquals(0,(int)StringPracticeHw.getCountWords(input, "Hello"));
+        assertEquals(2, (int)StringPracticeHw.getCountWords(input, " beer"));
+        //==============================================================
+        assertEquals(null, StringPracticeHw.getCountWords(input, null));
+        assertEquals(null, StringPracticeHw.getCountWords(null, "beer"));
+        assertEquals(null, StringPracticeHw.getCountWords(null, null));
+        assertEquals(null, StringPracticeHw.getCountWords("", "beer"));
+        assertEquals(null, StringPracticeHw.getCountWords(input, ""));
+        assertEquals(null, StringPracticeHw.getCountWords("", ""));
+        assertEquals(null, StringPracticeHw.getCountWords("		", "beer"));
+        assertEquals(null, StringPracticeHw.getCountWords(input, "    "));
+        assertEquals(null, StringPracticeHw.getCountWords("	", "		"));
+    }
+
 
 }
